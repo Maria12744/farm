@@ -1,0 +1,134 @@
+/* #mouse {
+    pointer-events: none;
+} */
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color:whitesmoke;
+    padding-top: 20px;
+    background-image: url("https://thumbs.dreamstime.com/b/%D1%84%D0%B5%D1%80%D0%BC%D0%B0-%D0%BD%D0%B0-%D0%BF%D0%BE%D0%BB%D0%B5-%D0%B7%D0%B5%D0%BB%D0%B5%D0%BD%D0%BE%D0%B3%D0%BE-%D1%86%D0%B2%D0%B5%D1%82%D0%B0-%D1%84%D0%BE%D0%BD%D0%B0-%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%B0-%D0%BF%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D1%8B-%D1%81%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%BE%D0%B9-%D0%BC%D0%B5%D1%81%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8-203640559.jpg") ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.start_section {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width:fit-content;
+    align-items: center;
+    background: radial-gradient(circle, rgba(196,232,113,1) 7%, rgba(91,218,111,1) 32%, rgba(51,179,31,1) 63%, rgba(0,117,59,1) 94%);
+    border-radius: 30px;
+    padding: 60px;
+    border:double 6px  #00753b;
+}
+
+.greeting {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    text-transform: capitalize;
+    color:rgb(255, 51, 0);
+    font-weight: bold;
+    text-shadow: white 2px 1px 0, white -1px -1px 0, 
+    white -1px 1px 0, white 1px -1px 0;
+    padding-bottom: 30px;
+}
+
+
+.name {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    text-transform: capitalize;
+    font-style: italic;
+    color:darkred;
+    text-shadow: white 2px 1px 0, white -1px -1px 0, 
+    white -1px 1px 0, white 1px -1px 0;
+}
+
+.name_input {
+    border-radius: 10px;
+    background-color: lightgreen;
+    border: 3px solid whitesmoke;
+    padding: 5px;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+
+.start_btn{
+    transition: .5s;
+    background-color:lightgreen;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 21px;
+    font-weight: bold;
+    text-shadow: white 2px 1px 0, white -1px -1px 0, 
+    white -1px 1px 0, white 1px -1px 0;
+    padding: 28px 16px;
+    border-radius: 50%;
+    color: darkgreen;
+    border: 3px solid white;
+    box-shadow: whitesmoke 2px 4px 2px;
+}
+
+#hero {
+    width: fit-content;
+    padding: 10px 30px;
+    background-color: lightgreen;
+    box-shadow: whitesmoke 2px 4px 2px;
+    border-radius: 10px;
+    background-color: lightgreen;
+    border: 3px solid whitesmoke;
+    margin-bottom: 50px;
+}
+
+#hero option {
+    width: fit-content;
+    padding: 10px 30px;
+    border-radius: 10px;
+    background-color: lightgreen;
+    border: 3px solid whitesmoke;
+    font-weight: bold;
+}
+
+.start_btn:hover {
+    background-color:gold;
+    color: darkgreen;
+    padding: 34px 20px;
+    cursor: pointer;
+}
+
+.user_name {
+    display: none;
+    width: 100px;
+    background: linear-gradient(90deg, rgb(210, 232, 113) 7%, rgba(171,218,91,1) 32%, rgba(91,179,31,1) 66%, rgba(68,215,141,1) 100%);
+    text-align: center;
+    transform: skew(-7deg);
+    border-radius: 10px;
+    border: 2px solid black;
+    box-shadow: 10px 9px 8px 0px rgba(34, 60, 80, 0.2);
+    padding: 7px 27px;
+    color: black;
+    font-size: 21px;
+    font-style: italic;
+    text-shadow: white 1px 1px 0, white -1px -1px 0, 
+    white -1px 1px 0, white 1px -1px 0;
+    
+}
+.player{
+    display: flex;
+    align-self: flex-end;
+}
+
+.male {
+    display: none;
+    margin-right: 80px;
+}
+
+.female {
+    display: none;
+    margin-right: 80px;
+}
+
