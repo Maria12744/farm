@@ -1,3 +1,43 @@
+.guideFirstLevel {
+	height: auto;
+    width: 500px;
+    border: double 6px #00753b;
+    border-radius: 46px;
+    background-image: linear-gradient(45deg, green, yellow);
+    position: absolute;
+	z-index: 5;
+	top: 20vh;
+    left: 32vw;
+    display: none;
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    text-shadow: white 2px 1px 0, white -1px -1px 0, white -1px 1px 0, white 1px -1px 0;
+    padding: 40px 15px;
+    color: darkgreen;
+}
+.guideBtn {
+    background-color: rgb(131 255 113);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: white 2px 1px 0, white -1px -1px 0, white -1px 1px 0, white 1px -1px 0;
+    padding: 8px 16px;
+    border-radius: 28px;
+    color: darkgreen;
+    border: 3px solid white;
+}
+.guideBtn:hover {
+	background-color: gold;
+    color: darkgreen;
+    cursor: pointer;
+    box-shadow: 0px 0px 20px 7px #1c5420;
+}
+
 .garden {
 	position: absolute;
     top: 593px;

@@ -1,5 +1,12 @@
 'use strict'
 
+const startGame = () => {		// ф-ия, начать 1й уровень
+	const guideFirstLevel = document.getElementsByClassName('guideFirstLevel')[0];
+	guideFirstLevel.style.display = 'none';
+	startMaturityGrowthOfEveryPlant();
+	startHpDecreaseOFEveryPlant();
+};
+
 const removeStartSection = () => {		// ф-ия, действия после нажатия кнопки "начать" при регистрации
 
 	let name = document.getElementsByClassName('name_input')[0].value;
@@ -34,14 +41,13 @@ const removeStartSection = () => {		// ф-ия, действия после на
 		const plumTree = document.getElementsByClassName('plum')[0];
 		plumTree.style.display = 'block';
 		
-		startMaturityGrowthOfEveryPlant();
-		startHpDecreaseOFEveryPlant();
+		const guideFirstLevel = document.getElementsByClassName('guideFirstLevel')[0];
+		guideFirstLevel.style.display = 'flex';
+		document.getElementsByClassName('guideBtn')[0].addEventListener('click', startGame);
 	}
 };
 
 document.getElementsByClassName('start_btn')[0].addEventListener('click', removeStartSection);
-
-
 
 
 
@@ -96,7 +102,8 @@ const showResultAndKeyToNextLevel = () => {		// ф-ия, показать рез
 	const nextLevel = document.getElementsByClassName('nextLevel')[0];
 	nextLevel.style.display = 'flex';
 	nextLevel.innerHTML = `
-		${player.name}, вы набрали ${player.score} баллов. 
+		${player.name}, <br><br> 
+		Вы набрали ${player.score} баллов. 
 		<br><br>
 		Чтобы перейти на следующий уровень, 
 				нажмите Enter.`;

@@ -1,5 +1,6 @@
 .start_section {
     margin: 0 auto;
+    height: 475px;
     display: flex;
     flex-direction: column;
     width:fit-content;
