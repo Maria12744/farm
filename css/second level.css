@@ -1,0 +1,53 @@
+.cowWrap {
+	position: absolute;
+    top: 437px;
+    left: 758px;
+    /* display: flex; */
+    display: none;
+    flex-direction: column;
+}
+.cowHpWrap {
+	border: 2px solid black;
+	padding: 2px;
+	height: 15px;
+	width: 200px;
+	margin-bottom: 10px;
+}
+.cowHp {
+	background-color: red;
+	height: 15px;
+	width: 200px;
+}
+.cowMilkWrap {
+	border: 2px solid black;
+	padding: 2px;
+	height: 15px;
+	width: 200px;
+    margin-bottom: 20px;
+}
+.cowMilk {
+	background-color: white;
+	height: 15px;
+	width: 0px;
+}
+
+.wolfWrap {
+	position: absolute;
+    top: 369px;
+    left: 1326px;
+    /* display: flex; */
+    display: none;
+    flex-direction: column;
+}
+.wolfHpWrap {
+	border: 2px solid black;
+	padding: 2px;
+	height: 15px;
+	width: 150px;
+	margin-bottom: 15px;
+}
+.wolfHp {
+	background-color: red;
+	height: 15px;
+	width: 150px;
+}
