@@ -1,0 +1,87 @@
+.garden {
+	position: absolute;
+    top: 593px;
+    height: 301px;
+    left: 408px;
+    display: none;
+    width: 800px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.maturationWrap {
+	display: inline-block;
+	border: 1px solid black;
+	padding: 2px;
+	height: 10px;
+	width: 100px;
+	margin-bottom: 5px;
+}
+.hpWrap {
+	display: inline-block;
+	border: 1px solid black;
+	padding: 2px;
+	height: 10px;
+	width: 100px;
+}
+.maturation {
+	background-color: green;
+	height: 10px;
+	width: 0px;
+}
+.hp {
+	background-color: red;
+	height: 10px;
+	width: 100px;
+}
+.hpAndPlantWrap {
+	display: inline-flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.hpAndTreeAppleWrap {
+    flex-direction: column;
+    flex-wrap: wrap;
+	position: absolute;
+    top: 606px;
+    left: 1274px;
+	display: none;
+}
+.hpAndTreePearWrap {
+    flex-direction: column;
+    flex-wrap: wrap;
+	position: absolute;
+    top: 446px;
+    left: 1482px;
+	display: none;
+}
+.treeMaturationWrap {
+	display: inline-block;
+	border: 1px solid black;
+	padding: 2px;
+	height: 10px;
+	width: 150px;
+	margin-bottom: 5px;
+}
+.treeHpWrap {
+	display: inline-block;
+	border: 1px solid black;
+	padding: 2px;
+	height: 10px;
+	width: 150px;
+}
+.treeMaturation {
+	background-color: #096409;
+	height: 10px;
+	width: 0px;
+}
+.treeHp {
+	background-color: red;
+	height: 10px;
+	width: 150px;
+}
+.plum {
+	display: none;
+	position: absolute;
+	top: 565px;
+    left: 1700px;
+}

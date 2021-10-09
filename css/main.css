@@ -1,0 +1,53 @@
+html,body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+}
+
+body {
+	background-image: url(../pics/background/photo_26.jpg);
+	background-size: 2100px 950px;
+    min-width: 1500px;
+    min-height: 930px;
+    position: relative;
+}
+
+.player{
+    display: flex;
+    align-self: flex-end;
+}
+
+.male {
+    display: none;
+    position: absolute;
+    top: 390px;
+    left: 111px;
+}
+
+.female {
+    display: none;
+	position: absolute;
+    top: 390px;
+    left: 111px;
+}
+
+.nextLevel {
+	height: auto;
+    width: 394px;
+    border: double 6px #00753b;
+    border-radius: 46px;
+    background-image: linear-gradient(45deg, green, yellow);
+    position: absolute;
+    top: 38vh;
+    left: 38vw;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 21px;
+    font-weight: bold;
+    text-shadow: white 2px 1px 0, white -1px -1px 0, white -1px 1px 0, white 1px -1px 0;
+    padding: 40px 15px;
+    color: darkgreen;
+}

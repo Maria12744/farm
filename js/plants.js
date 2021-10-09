@@ -1,46 +1,5 @@
 'use strict'
 
-
-let player = {
-    
-}
-
-let plantHPBar = document.getElementsByClassName('hp');
-let treeHPBar = document.getElementsByClassName('treeHp');
-/*
-let plant = {
-	maturation: 0, 	//зрелость растения
-	hp: 100, 	//запас жидкости(время жизни)
-	startmaturityGrowthId: null, 	//id таймера роста зрелости
-	startHpDecreaseId: null, 	//id таймера уменьшения запаса жидкости
-	maturityGrowth() { 		//рост зрелости
-		this.maturation += 20;
-		plantHealthBar.style.width = this.maturation + 'px';
-	},
-	startMaturityGrowth() { 	//начать рост зрелости
-		if (this.hp > 0 && this.maturation < 100) {
-			this.startmaturityGrowthId = setTimeout(function maturityGrowth() {
-				this.maturityGrowth();
-				timerId = setTimeout(maturityGrowth, 5_000);
-			}, 5_000);
-		}
-	},
-	hpDecrease(plantHPBar) {
-		this.hp -= 20;
-		plantHPBar.style.width = this.hp + 'px';
-	},
-	startHpDecrease(time) { 	//начать уменьшение запаса жидкости
-		this.startHpDecreaseId = setTimeout(function hpDecrease() {
-			this.hpDecrease();
-			timerId = setTimeout(hpDecrease, time);
-		}, time);
-	},
-	irrigation(plantHPBar) { //метод полива
-		this.hp += 20;
-		plantHPBar.style.width = this.hp + 'px';
-	},
-};
-*/
 class Plant {
 	constructor(maturation, hp) {
 		this.maturePlant = maturation;
@@ -62,12 +21,11 @@ class Plant {
 			thismaturityGrowth(plantMaturityBar, amount);
 			thisstopMaturityGrowth();
 		}, sec);
-		//console.log(this.startmaturityGrowthId);
 	}
-	stopMaturityGrowth() {
+	stopMaturityGrowth() {		//остановить рост зрелости
 		if (this.hp === 0 || this.maturation === this.maturePlant ) {
-			//console.log(this.startmaturityGrowthId);
-			clearTimeout(this.startmaturityGrowthId);
+			clearTimeout(this.startmaturityGrowthId);	
+			scoreCountOfPlayer(this);
 		}
 	}
 	hpDecrease(plantHPBar, amount) {
@@ -82,24 +40,18 @@ class Plant {
 			thisstophpDecrease(name);
 		}, time);
 	}
-	stopHpDecrease(name) {
+	stopHpDecrease(name) {			 //закончить уменьшение запаса жидкости
 		if (this.maturation === this.maturePlant ) {
-			//console.log(this.startmaturityGrowthId);
 			clearTimeout(this.startHpDecreaseId);
 			name.removeEventListener('click', hpGrowthOfPlants);
 		}  else if (this.hp === 0) {
 			clearTimeout(this.startHpDecreaseId);
 			name.removeEventListener('click', hpGrowthOfPlants);
 			this.alive = false;
-		}
+		} 
+		endOfFirstLevel();
 	}
-	irrigation(plantHPBar, amount) { //метод полива
-		this.hp += amount;
-		if (this.hp < this.hpMax) { 
-			plantHPBar.style.width = this.hp + 'px';
-		}
-	}
-}
+};
 
 let carrot1 = new Plant(100, 100);
 let carrot2 = new Plant(100, 100);
@@ -117,8 +69,9 @@ let cabbage7 = new Plant(100, 100);
 let treeApple = new Plant(150, 150);
 let treePear = new Plant(150, 150);
 
-const startMaturityGrowthOfEveryPlant = () => {
-	//console.log(carrots[0].previousElementSibling.previousElementSibling.children[0]);
+
+const startMaturityGrowthOfEveryPlant = () => {		//ф-ия начать рост зрелости всех растений и деревьев
+	
 	let carrot1plantMaturity = carrots[0].previousElementSibling.previousElementSibling.children[0];
 	let carrot2plantMaturity = carrots[1].previousElementSibling.previousElementSibling.children[0];
 	let carrot3plantMaturity = carrots[2].previousElementSibling.previousElementSibling.children[0];
@@ -134,24 +87,26 @@ const startMaturityGrowthOfEveryPlant = () => {
 	let cabbage7plantMaturity = cabbages[6].previousElementSibling.previousElementSibling.children[0];
 	let treeAppleplantMaturity = trees[0].previousElementSibling.previousElementSibling.children[0];
 	let treePearplantMaturity = trees[1].previousElementSibling.previousElementSibling.children[0];
+	
 	carrot1.startMaturityGrowth(5_000, carrot1plantMaturity, 10); 	//рост зрелости
 	carrot2.startMaturityGrowth(6_000, carrot2plantMaturity, 10);	//(каждые _сек,, на _px)
 	carrot3.startMaturityGrowth(3_000, carrot3plantMaturity, 10);
-	carrot4.startMaturityGrowth(7_000, carrot4plantMaturity, 10);
+	carrot4.startMaturityGrowth(5_000, carrot4plantMaturity, 10);
 	carrot5.startMaturityGrowth(4_000, carrot5plantMaturity, 10);
 	carrot6.startMaturityGrowth(5_000, carrot6plantMaturity, 10);
 	cabbage1.startMaturityGrowth(3_000, cabbage1plantMaturity, 10);
-	cabbage2.startMaturityGrowth(7_000, cabbage2plantMaturity, 10);
+	cabbage2.startMaturityGrowth(5_000, cabbage2plantMaturity, 10);
 	cabbage3.startMaturityGrowth(6_000, cabbage3plantMaturity, 10);
-	cabbage4.startMaturityGrowth(8_000, cabbage4plantMaturity, 10);
+	cabbage4.startMaturityGrowth(4_000, cabbage4plantMaturity, 10);
 	cabbage5.startMaturityGrowth(5_000, cabbage5plantMaturity, 10);
 	cabbage6.startMaturityGrowth(4_000, cabbage6plantMaturity, 10);
 	cabbage7.startMaturityGrowth(3_000, cabbage7plantMaturity, 10);
-	treeApple.startMaturityGrowth(10_000, treeAppleplantMaturity, 25);
-	treePear.startMaturityGrowth(9_000, treePearplantMaturity, 25);
+	treeApple.startMaturityGrowth(8_000, treeAppleplantMaturity, 25);
+	treePear.startMaturityGrowth(7_000, treePearplantMaturity, 25);
 };
 
-const startHpDecreaseOFEveryPlant  = () => {
+const startHpDecreaseOFEveryPlant  = () => {		// ф-ия начать уменьшение запаса жидкости каждого растения и дерева
+
 	let carrot1plantHp = carrots[0].previousElementSibling.children[0];
 	let carrot2plantHp = carrots[1].previousElementSibling.children[0];
 	let carrot3plantHp = carrots[2].previousElementSibling.children[0];
@@ -167,6 +122,7 @@ const startHpDecreaseOFEveryPlant  = () => {
 	let cabbage7plantHp = cabbages[6].previousElementSibling.children[0];
 	let treeAppleplantHp = trees[0].previousElementSibling.children[0];
 	let treePearplantHp = trees[1].previousElementSibling.children[0];
+	
 	carrot1.startHpDecrease(5_000, carrot1plantHp, 20, carrots[0]); 	//рост зрелости
 	carrot2.startHpDecrease(6_000, carrot2plantHp, 20, carrots[1]);	//(каждые _сек,, на _px)
 	carrot3.startHpDecrease(3_000, carrot3plantHp, 20, carrots[2]);
@@ -176,82 +132,50 @@ const startHpDecreaseOFEveryPlant  = () => {
 	cabbage1.startHpDecrease(3_000, cabbage1plantHp, 20, cabbages[0]);
 	cabbage2.startHpDecrease(7_000, cabbage2plantHp, 20, cabbages[1]);
 	cabbage3.startHpDecrease(6_000, cabbage3plantHp, 20, cabbages[2]);
-	cabbage4.startHpDecrease(8_000, cabbage4plantHp, 20, cabbages[3]);
+	cabbage4.startHpDecrease(4_000, cabbage4plantHp, 20, cabbages[3]);
 	cabbage5.startHpDecrease(5_000, cabbage5plantHp, 20, cabbages[4]);
 	cabbage6.startHpDecrease(4_000, cabbage6plantHp, 20, cabbages[5]);
 	cabbage7.startHpDecrease(3_000, cabbage7plantHp, 20, cabbages[6]);
-	treeApple.startHpDecrease(3_000, treeAppleplantHp, 30, trees[0]);
-	treePear.startHpDecrease(2_000, treePearplantHp, 30, trees[1]);
+	treeApple.startHpDecrease(5_000, treeAppleplantHp, 30, trees[0]);
+	treePear.startHpDecrease(4_000, treePearplantHp, 30, trees[1]);
 };
-
-
-const removeStartSection = () => {
-    const userName = document.getElementsByClassName('user_name')[0];
-    userName.style.display = 'block';
-    let name = document.getElementsByClassName('name_input')[0].value;
-    userName.textContent = name;
-    localStorage.setItem('user', name);
-
-    let sex = document.getElementById('hero').value;
-    const ourPlayer = document.getElementsByClassName(sex)[0];
-    ourPlayer.style.display = 'flex';
-    localStorage.setItem('sex', sex);
-
-    const startScreen = document.getElementsByClassName('start_section')[0];
-    startScreen.style.display = 'none';
-	
-	const garden = document.getElementsByClassName('garden')[0];
-    garden.style.display = 'flex';
-	
-	const apppleTree = document.getElementsByClassName('hpAndTreeAppleWrap')[0];
-    apppleTree.style.display = 'inline-flex';
-	const pearTree = document.getElementsByClassName('hpAndTreePearWrap')[0];
-	pearTree.style.display = 'inline-flex';
-	const plumTree = document.getElementsByClassName('plum')[0];
-	plumTree.style.display = 'block';
-	
-	startMaturityGrowthOfEveryPlant();
-	startHpDecreaseOFEveryPlant();
-};
-
-document.getElementsByClassName('start_btn')[0].addEventListener('click', removeStartSection);
-
 
 const hpGrowthOfPlants = (event) => {			// увеличение ХП по Клику
+
 	let hpOfPlant = event.target.previousElementSibling.children[0];
-	// console.log(hpOfPlant);
-	// console.log(event.target.classList[1]);
+	
 	if (event.target.classList[1] === 'carrot1') {
-		carrot1.irrigation(hpOfPlant, 10);
+		player.irrigation(carrot1, hpOfPlant, 10);
 	} else if (event.target.classList[1] === 'carrot2') {
-		carrot2.irrigation(hpOfPlant, 10);
+		player.irrigation(carrot2, hpOfPlant, 10);
 	} else if (event.target.classList[1] === 'carrot3') {
-		carrot3.irrigation(hpOfPlant, 10);
+		player.irrigation(carrot3, hpOfPlant, 10);
 	} else if (event.target.classList[1] === 'carrot4') {
-		carrot4.irrigation(hpOfPlant, 10);
+		player.irrigation(carrot4, hpOfPlant, 10);
 	} else if (event.target.classList[1] === 'carrot5') {
-		carrot5.irrigation(hpOfPlant, 10);
+		player.irrigation(carrot5, hpOfPlant, 10);
 	} else if (event.target.classList[1] === 'carrot6') {
-		carrot6.irrigation(hpOfPlant, 10);
+		player.irrigation(carrot6, hpOfPlant, 10);
 	} else if (event.target.classList[1] === 'cabbage1') {
-		cabbage1.irrigation(hpOfPlant, 10);
+		player.irrigation(cabbage1, hpOfPlant, 10);
 	}  else if (event.target.classList[1] === 'cabbage2') {
-		cabbage2.irrigation(hpOfPlant, 10);
+		player.irrigation(cabbage2, hpOfPlant, 10);
 	}  else if (event.target.classList[1] === 'cabbage3') {
-		cabbage3.irrigation(hpOfPlant, 10);
+		player.irrigation(cabbage3, hpOfPlant, 10);
 	}  else if (event.target.classList[1] === 'cabbage4') {
-		cabbage4.irrigation(hpOfPlant, 10);
+		player.irrigation(cabbage4, hpOfPlant, 10);
 	}  else if (event.target.classList[1] === 'cabbage5') {
-		cabbage5.irrigation(hpOfPlant, 10);
+		player.irrigation(cabbage5, hpOfPlant, 10);
 	}  else if (event.target.classList[1] === 'cabbage6') {
-		cabbage6.irrigation(hpOfPlant, 10);
+		player.irrigation(cabbage6, hpOfPlant, 10);
 	}  else if (event.target.classList[1] === 'cabbage7') {
-		cabbage7.irrigation(hpOfPlant, 10);
+		player.irrigation(cabbage7, hpOfPlant, 10);
 	}  else if (event.target.classList[1] === 'apple') {
-		treeApple.irrigation(hpOfPlant, 15);
+		player.irrigation(treeApple, hpOfPlant, 10);
 	}  else if (event.target.classList[1] === 'pear') {
-		treePear.irrigation(hpOfPlant, 15);
+		player.irrigation(treePear, hpOfPlant, 10);
 	}  
+	
 };
 
 let carrots = document.getElementsByClassName('carrot');
