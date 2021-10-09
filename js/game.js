@@ -1,40 +1,47 @@
 'use strict'
 
 const removeStartSection = () => {		// ф-ия, действия после нажатия кнопки "начать" при регистрации
-    const userName = document.getElementsByClassName('user_name')[0];
-    userName.style.display = 'block';
-    let name = document.getElementsByClassName('name_input')[0].value;
-    userName.textContent = name;
-    localStorage.setItem('user', name);
-	player.name = name;
 
-    let sex = document.getElementById('hero').value;
-    const ourPlayer = document.getElementsByClassName(sex)[0];
-    ourPlayer.style.display = 'flex';
-    localStorage.setItem('sex', sex);
-	player.sex = sex;
-	
-	localStorage.setItem('score', player.score);
+	let name = document.getElementsByClassName('name_input')[0].value;
 
-    const startScreen = document.getElementsByClassName('start_section')[0];
-    startScreen.style.display = 'none';
-	
-	const garden = document.getElementsByClassName('garden')[0];
-    garden.style.display = 'flex';
-	
-	const apppleTree = document.getElementsByClassName('hpAndTreeAppleWrap')[0];
-    apppleTree.style.display = 'inline-flex';
-	const pearTree = document.getElementsByClassName('hpAndTreePearWrap')[0];
-	pearTree.style.display = 'inline-flex';
-	const plumTree = document.getElementsByClassName('plum')[0];
-	plumTree.style.display = 'block';
-	
-	startMaturityGrowthOfEveryPlant();
-	startHpDecreaseOFEveryPlant();
-	
+	if (name.trim() === '') {
+		alert('Введите Имя!');
+	} else {
+		const userName = document.getElementsByClassName('user_name')[0];
+		userName.style.display = 'block';
+		userName.textContent = name;
+		localStorage.setItem('user', name);
+		player.name = name;
+
+		let sex = document.getElementById('hero').value;
+		const ourPlayer = document.getElementsByClassName(sex)[0];
+		ourPlayer.style.display = 'flex';
+		localStorage.setItem('sex', sex);
+		player.sex = sex;
+		
+		localStorage.setItem('score', player.score);
+
+		const startScreen = document.getElementsByClassName('start_section')[0];
+		startScreen.style.display = 'none';
+		
+		const garden = document.getElementsByClassName('garden')[0];
+		garden.style.display = 'flex';
+		
+		const apppleTree = document.getElementsByClassName('hpAndTreeAppleWrap')[0];
+		apppleTree.style.display = 'inline-flex';
+		const pearTree = document.getElementsByClassName('hpAndTreePearWrap')[0];
+		pearTree.style.display = 'inline-flex';
+		const plumTree = document.getElementsByClassName('plum')[0];
+		plumTree.style.display = 'block';
+		
+		startMaturityGrowthOfEveryPlant();
+		startHpDecreaseOFEveryPlant();
+	}
 };
 
 document.getElementsByClassName('start_btn')[0].addEventListener('click', removeStartSection);
+
+
 
 
 
