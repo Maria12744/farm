@@ -3,9 +3,9 @@
 let cow = {
     health: 200,
     milk: 0,
-    milkCount: 10,
+    milkCount: 5,
     alive: true,
-    getDamageAndUpdateHP() {
+    getDamageAndUpdateHP(dmg) { //урон от волка
         cow.getDamage(dmg);
         cow.updateHP();
     },
@@ -13,22 +13,30 @@ let cow = {
         this.health -= dmg;
         if(this.health <= 0) {
             this.alive = false;
+            this.dieCow();
+            showResultAndFinish();
         }
     },
     updateHP() {
-        document.getElementsByClassName('cowHp')[0] = this.health + 'px';
+        document.getElementsByClassName('cowHp')[0].style.width = this.health + 'px';
     },
-    giveMilkAndUpdateMilkBar () {
+    giveMilkAndUpdateMilkBar () {//дает молоко
         cow.giveMilk();
         cow.updateMilkBar();
     },
     giveMilk () {
-        if(this.milk <= 190) {
+        if(this.milk < 200) {
            this.milk += this.milkCount; 
-        }   
+        }  else if(this.milk === 200) {
+            showResultAndFinish();
+        }
     },
     updateMilkBar () {
         document.getElementsByClassName('cowMilk')[0].style.width = this.milk + 'px';
+    },
+
+    dieCow() {
+        mainCow.style.display = 'none';
     },
 };
 

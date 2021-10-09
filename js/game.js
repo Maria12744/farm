@@ -95,7 +95,8 @@ const showFirstLevel = (event) => {		// ф-ия, показать 2ой уров
 		cow.style.display = 'flex';
 		const mainWolf = document.getElementsByClassName('wolfWrap')[0];
 		mainWolf.style.display = 'flex';
-		wolf.attackCow.bind(wolf);
+		wolf.attackCow();
+		
 	}
 };
 
@@ -114,3 +115,14 @@ const showResultAndKeyToNextLevel = () => {		// ф-ия, показать рез
 	
 	
 };
+
+const showResultAndFinish = () => {
+	const finishGame = document.getElementsByClassName('finish')[0];
+	finishGame.style.display = 'flex';
+	finishGame.innerHTML = `
+	${player.name}, <br><br> 
+		Вы набрали ${player.score} баллов. 
+		<br><br>
+		Спасибо за игру!`;
+
+}

@@ -1,22 +1,24 @@
 'use strict'
 
+let mainWolf = document.getElementsByClassName('wolfWrap')[0];
 
 let wolfHp = document.getElementsByClassName('wolfHp')[0];
 let wolf = {
     life: 150,
-    eatSpeed: 1000,
+    eatSpeed: 3000,
     startEat: null,
     dmg: 20,
     alive: true,
     eatCow() {
-        cow.getDamageAndUpdateHP(this.dmg);
+        cow.getDamageAndUpdateHP(wolf.dmg);
     },
 
     getDmg(damage) {
         this.life -= damage;
         if(this.life <= 0) {
-            this.stopAttackCow();
             this.alive = false;
+            this.stopAttackCow();
+            this.dieWolf();
         }
     },
 
@@ -24,17 +26,20 @@ let wolf = {
         wolfHp.style.width = this.life + 'px';
     },
 
-    getDmgAndUpdateWolfHp () {
+    getDmgAndUpdateWolfHp (damage) { //урон от игрока
         wolf.getDmg(damage);
         wolf.updateWolfHp();
     },
 
-    attackCow() {
+    attackCow() { //нанести урон корове
         this.startEat = setInterval(this.eatCow, this.eatSpeed);
     },
     stopAttackCow() {
-        clearInterval(this.attackCow)
+        clearInterval(wolf.startEat);
+    },
+    dieWolf() {
+        mainWolf.style.display = 'none';
     }
 };
 
-mainWolf.addEventListener('click', player.killWolf)
+mainWolf.addEventListener('click', player.killWolf);
