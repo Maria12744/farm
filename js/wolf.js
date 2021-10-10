@@ -5,7 +5,7 @@ let mainWolf = document.getElementsByClassName('wolfWrap')[0];
 let wolfHp = document.getElementsByClassName('wolfHp')[0];
 let wolf = {
     life: 150,
-    eatSpeed: 3000,
+    eatSpeed: 1000,
     startEat: null,
     dmg: 20,
     alive: true,

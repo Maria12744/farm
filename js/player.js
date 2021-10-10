@@ -23,11 +23,7 @@ let player = {
 		wolf.getDmgAndUpdateWolfHp(player.damage);
 	},
 	scoreCountCow(cow) { //очки за второй уровень
-		if(cow.alive === false) {
-			this.score += 0;
-		} else if(cow.alive === true) {
-			this.score += cow.milk;
-		}
+		this.score += cow.milk;
 	},
 	
 

@@ -77,8 +77,21 @@ const scoreCountOfPlayer = (plant) => {		// ф-ия подсчета резул�
 	localStorage.setItem('score', player.score);
 };
 
-const showFirstLevel = (event) => {		// ф-ия, показать 2ой уровень
-	if (event.code === 'Enter') {
+
+
+const showGuideSecondLevel = (event) => {
+	if(event.code === 'Enter') {
+		const guideSecondLevel = document.getElementsByClassName('guideSecondLevel')[0];
+		guideSecondLevel.style.display = 'flex';
+		const guideBtnSecond = document.getElementsByClassName('guideBtnSecond')[0];
+		guideBtnSecond.onclick = function() {
+			guideSecondLevel.style.display = 'none';
+			showFirstLevel();
+			};	
+	}
+}
+
+const showFirstLevel = () => {		// ф-ия, показать 2ой уровень
 		document.body.style.backgroundImage = 'url(pics/background/photo_27.jpg)';
 		const garden = document.getElementsByClassName('garden')[0];
 		garden.style.display = 'none';
@@ -91,14 +104,16 @@ const showFirstLevel = (event) => {		// ф-ия, показать 2ой уров
 		const nextLevel = document.getElementsByClassName('nextLevel')[0];
 		nextLevel.style.display = 'none';
 		
+		
+
 		const cow = document.getElementsByClassName('cowWrap')[0];
 		cow.style.display = 'flex';
 		const mainWolf = document.getElementsByClassName('wolfWrap')[0];
 		mainWolf.style.display = 'flex';
 		wolf.attackCow();
-		
-	}
 };
+
+
 
 const showResultAndKeyToNextLevel = () => {		// ф-ия, показать результат уровня и как перейти на след.
 	
@@ -111,18 +126,26 @@ const showResultAndKeyToNextLevel = () => {		// ф-ия, показать рез
 		Чтобы перейти на следующий уровень, 
 				нажмите Enter.`;
 		
-	document.addEventListener('keyup', showFirstLevel);
+	document.addEventListener('keyup', showGuideSecondLevel);
 	
 	
 };
 
+
+
+const finishGame = document.getElementsByClassName('finish')[0];
 const showResultAndFinish = () => {
-	const finishGame = document.getElementsByClassName('finish')[0];
 	finishGame.style.display = 'flex';
 	finishGame.innerHTML = `
 	${player.name}, <br><br> 
 		Вы набрали ${player.score} баллов. 
 		<br><br>
-		Спасибо за игру!`;
+		Спасибо за игру!
+		<br><br>
+		`;
 
-}
+	
+};
+
+
+
