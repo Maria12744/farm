@@ -27,6 +27,7 @@ let cow = {
     giveMilk () {
         if(this.milk < 200) {
            this.milk += this.milkCount; 
+           player.score += this.milkCount;
         }  else if(this.milk === 200) {
             showResultAndFinish();
         }
