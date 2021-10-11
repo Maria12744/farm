@@ -77,22 +77,31 @@ const scoreCountOfPlayer = (plant) => {		// ф-ия подсчета резул�
 	localStorage.setItem('score', player.score);
 };
 
+const startSecondLevel = () => {		// ф-ия, начать 2й уровень
+	const guideSecondLevel = document.getElementsByClassName('guideSecondLevel')[0];
+	guideSecondLevel.style.display = 'none';
+	
+	mainCow.addEventListener('click', cow.giveMilkAndUpdateMilkBar);
 
+	wolf.attackCow();
+};
 
-const showGuideSecondLevel = (event) => {
+const showGuideSecondLevel = (event) => {		// ф-ия, перейти на 2ой уровень и показать  правила
 	if(event.code === 'Enter') {
+		showSecondLevel();
+		
 		const guideSecondLevel = document.getElementsByClassName('guideSecondLevel')[0];
 		guideSecondLevel.style.display = 'flex';
 		const guideBtnSecond = document.getElementsByClassName('guideBtnSecond')[0];
-		guideBtnSecond.onclick = function() {
-			guideSecondLevel.style.display = 'none';
-			showFirstLevel();
-			};	
+		guideBtnSecond.addEventListener('click', startSecondLevel);
+		
+		document.removeEventListener('keyup', showGuideSecondLevel);
 	}
 }
 
-const showFirstLevel = () => {		// ф-ия, показать 2ой уровень
+const showSecondLevel = () => {		// ф-ия, показать 2ой уровень
 		document.body.style.backgroundImage = 'url(pics/background/photo_27.jpg)';
+		
 		const garden = document.getElementsByClassName('garden')[0];
 		garden.style.display = 'none';
 		const apppleTree = document.getElementsByClassName('hpAndTreeAppleWrap')[0];
@@ -104,16 +113,14 @@ const showFirstLevel = () => {		// ф-ия, показать 2ой уровен�
 		const nextLevel = document.getElementsByClassName('nextLevel')[0];
 		nextLevel.style.display = 'none';
 		
-		
-
 		const cow = document.getElementsByClassName('cowWrap')[0];
 		cow.style.display = 'flex';
-		wolf.attackCow();
+		
 };
 
 
 
-const showResultAndKeyToNextLevel = () => {		// ф-ия, показать результат уровня и как перейти на след.
+const showResultAndKeyToNextLevel = () => {		// ф-ия, показать результат после 1го уровня и как перейти на след.
 	
 	const nextLevel = document.getElementsByClassName('nextLevel')[0];
 	nextLevel.style.display = 'flex';
@@ -132,17 +139,40 @@ const showResultAndKeyToNextLevel = () => {		// ф-ия, показать рез
 
 
 const finishGame = document.getElementsByClassName('finish')[0];
-const showResultAndFinish = () => {
+
+const showResultAndFinish = () => {			// ф-ия, показать результат после 2го уровня
 	finishGame.style.display = 'flex';
+	if (cow.milk === 200) {
 	finishGame.innerHTML = `
-	${player.name}, <br><br> 
-		Вы набрали ${player.score} баллов. 
+		${player.name}, <br><br> 
+		Вы защитили свою корову <br> 
+		и собрали всё молоко! <br><br> 
+		Вы увеличили свой счёт <br> 
+		на ${cow.milk} балл(а/ов). 
 		<br><br>
+		Ваш общий счёт: <br> 
+		${player.score} балл(а/ов).
+		<br><br><br>
 		Спасибо за игру!
 		<br><br>
+	`;
+	} else if (cow.health <= 0) {
+		finishGame.innerHTML = `
+			${player.name}, <br><br> 
+			Вы не уберегли свою корову, <br> 
+			но собрали молока <br> 
+			и увеличили свой счёт <br> 
+			на ${cow.milk} балл(а/ов). 
+			<br><br>
+			Ваш общий счёт: <br> 
+			${player.score} балл(а/ов).
+			<br><br><br>
+			Спасибо за игру!
+			<br><br>
 		`;
+	}
 
-	
+	localStorage.score = player.score;
 };
 
 

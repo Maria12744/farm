@@ -3,44 +3,48 @@
 const mainWolf = document.getElementsByClassName('wolfWrap')[0];
 
 let wolfHp = document.getElementsByClassName('wolfHp')[0];
+
 let wolf = {
     life: 150,
-    eatSpeed: 4000,
-    startEat: null,
+    showEvery: 10_000, 	//как часто показывается волк
+    eatSpeed: 1000,		//как часто кусает корову
+    startShowWolf: null,
+    startEatCow: null,
     dmg: 20,
     alive: true,
-    eatCow() {
+	eatCow() {
+		cow.getDamageAndUpdateHP(wolf.dmg);
+	},
+    showWolf() {
 		mainWolf.style.display = 'flex';
-        cow.getDamageAndUpdateHP(wolf.dmg);
+		wolfHp.style.width = '150px';
+		wolf.life = 150;
+		mainWolf.addEventListener('click', player.killWolf);
+		wolf.startEatCow = setInterval(wolf.eatCow, wolf.eatSpeed);
     },
-
     getDmg(damage) {
         this.life -= damage;
         if(this.life <= 0) {
             this.alive = false;
-            this.stopAttackCow();
             this.dieWolf();
         }
     },
-
     updateWolfHp() {
         wolfHp.style.width = this.life + 'px';
     },
-
     getDmgAndUpdateWolfHp (damage) { //урон от игрока
         wolf.getDmg(damage);
         wolf.updateWolfHp();
     },
-
     attackCow() { //нанести урон корове
-        this.startEat = setInterval(this.eatCow, this.eatSpeed);
+        this.startShowWolf = setInterval(this.showWolf, this.showEvery);
     },
     stopAttackCow() {
-        clearInterval(wolf.startEat);
+        clearInterval(wolf.startShowWolf);
     },
-    dieWolf() {
+    dieWolf() {		//волк убегает
         mainWolf.style.display = 'none';
+		clearInterval(wolf.startEatCow);
     }
 };
 
-mainWolf.addEventListener('click', player.killWolf);
