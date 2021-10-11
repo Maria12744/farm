@@ -120,7 +120,8 @@ const showSecondLevel = () => {		// ф-ия, показать 2ой уровен
 
 
 
-const showResultAndKeyToNextLevel = () => {		// ф-ия, показать результат после 1го уровня и как перейти на след.
+
+const showResultAndKeyToNextLevel = () => {		// ф-ия, показать результат уровня и как перейти на след.
 	
 	const nextLevel = document.getElementsByClassName('nextLevel')[0];
 	nextLevel.style.display = 'flex';
