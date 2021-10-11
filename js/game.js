@@ -108,8 +108,6 @@ const showFirstLevel = () => {		// ф-ия, показать 2ой уровен�
 
 		const cow = document.getElementsByClassName('cowWrap')[0];
 		cow.style.display = 'flex';
-		const mainWolf = document.getElementsByClassName('wolfWrap')[0];
-		mainWolf.style.display = 'flex';
 		wolf.attackCow();
 };
 

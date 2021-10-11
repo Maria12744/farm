@@ -3,7 +3,7 @@
 let cow = {
     health: 200,
     milk: 0,
-    milkCount: 5,
+    milkCount: 2,
     alive: true,
     getDamageAndUpdateHP(dmg) { //урон от волка
         cow.getDamage(dmg);

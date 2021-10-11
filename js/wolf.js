@@ -1,15 +1,16 @@
 'use strict'
 
-let mainWolf = document.getElementsByClassName('wolfWrap')[0];
+const mainWolf = document.getElementsByClassName('wolfWrap')[0];
 
 let wolfHp = document.getElementsByClassName('wolfHp')[0];
 let wolf = {
     life: 150,
-    eatSpeed: 1000,
+    eatSpeed: 4000,
     startEat: null,
     dmg: 20,
     alive: true,
     eatCow() {
+		mainWolf.style.display = 'flex';
         cow.getDamageAndUpdateHP(wolf.dmg);
     },
 

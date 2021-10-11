@@ -5,7 +5,7 @@ let player = {
     name: null,
 	sex: null,
 	score: 0,
-	damage: 5,
+	damage: 10,
 	irrigation(plant, plantHPBar, amount) { //метод полива
 		if (plant.hp < plant.hpMax) { 
 			plant.hp += amount;
@@ -21,6 +21,7 @@ let player = {
 	},
 	killWolf () { //kill wolf
 		wolf.getDmgAndUpdateWolfHp(player.damage);
+		mainWolf.style.display = 'none';
 	},
 	scoreCountCow(cow) { //очки за второй уровень
 		this.score += cow.milk;
