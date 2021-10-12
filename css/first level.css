@@ -1,127 +1,138 @@
 .guideFirstLevel {
-	height: auto;
-    width: 500px;
-    border: double 6px #00753b;
-    border-radius: 46px;
-    background-image: linear-gradient(45deg, green, yellow);
-    position: absolute;
-	z-index: 5;
-	top: 20vh;
-    left: 32vw;
-    display: none;
-    /* display: flex; */
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 17px;
-    font-weight: bold;
-    text-shadow: white 2px 1px 0, white -1px -1px 0, white -1px 1px 0, white 1px -1px 0;
-    padding: 40px 15px;
-    color: darkgreen;
+  height: auto;
+  width: 500px;
+  border: double 6px rgb(0, 117, 59);
+  border-radius: 46px;
+  background-image: linear-gradient(45deg, rgb(0, 128, 0), rgb(255, 255, 0));
+  z-index: 5;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  text-shadow: rgb(255, 255, 255) 2px 1px 0, rgb(255, 255, 255) -1px -1px 0, rgb(255, 255, 255) -1px 1px 0, rgb(255, 255, 255) 1px -1px 0;
+  padding: 40px 15px;
+  color: rgb(0, 100, 0);
 }
 .guideBtn {
-    background-color: rgb(131 255 113);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    text-shadow: white 2px 1px 0, white -1px -1px 0, white -1px 1px 0, white 1px -1px 0;
-    padding: 8px 16px;
-    border-radius: 28px;
-    color: darkgreen;
-    border: 3px solid white;
+  background-color: rgb(131, 255, 113);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: rgb(255, 255, 255) 2px 1px 0, rgb(255, 255, 255) -1px -1px 0, rgb(255, 255, 255) -1px 1px 0, rgb(255, 255, 255) 1px -1px 0;
+  padding: 8px 16px;
+  border-radius: 28px;
+  color: rgb(0, 100, 0);
+  border: 3px solid rgb(255, 255, 255);
 }
 .guideBtn:hover {
-	background-color: gold;
-    color: darkgreen;
-    cursor: pointer;
-    box-shadow: 0px 0px 20px 7px #1c5420;
+  background-color: rgb(255, 215, 0);
+  color: rgb(0, 100, 0);
+  cursor: pointer;
+  box-shadow: 0px 0px 20px 7px rgb(28, 84, 32);
 }
 
 .garden {
-	position: absolute;
-    top: 593px;
-    height: 301px;
-    left: 408px;
-    display: none;
-    width: 800px;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  position: absolute;
+  top: 593px;
+  height: 301px;
+  left: 300px;
+  display: none;
+  width: 900px;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .maturationWrap {
-	display: inline-block;
-	border: 1px solid black;
-	padding: 2px;
-	height: 10px;
-	width: 100px;
-	margin-bottom: 5px;
+  display: inline-block;
+  border: 1px solid rgb(0, 0, 0);
+  padding: 2px;
+  height: 10px;
+  width: 100px;
+  margin-bottom: 5px;
+  border-radius: 20px;
 }
 .hpWrap {
-	display: inline-block;
-	border: 1px solid black;
-	padding: 2px;
-	height: 10px;
-	width: 100px;
+  display: inline-block;
+  border: 1px solid rgb(0, 0, 0);
+  padding: 2px;
+  height: 10px;
+  width: 100px;
+  border-radius: 20px;
 }
 .maturation {
-	background-color: green;
-	height: 10px;
-	width: 0px;
+  background-color: rgb(0, 128, 0);
+  height: 10px;
+  width: 0px;
+  border-radius: 20px;
 }
 .hp {
-	background-color: red;
-	height: 10px;
-	width: 100px;
+  background-color: rgb(255, 0, 0);
+  height: 10px;
+  width: 100px;
+  border-radius: 20px;
 }
 .hpAndPlantWrap {
-	display: inline-flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 .hpAndTreeAppleWrap {
-    flex-direction: column;
-    flex-wrap: wrap;
-	position: absolute;
-    top: 606px;
-    left: 1274px;
-	display: none;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 586px;
+  left: 1274px;
+  display: none;
 }
 .hpAndTreePearWrap {
-    flex-direction: column;
-    flex-wrap: wrap;
-	position: absolute;
-    top: 446px;
-    left: 1482px;
-	display: none;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 446px;
+  left: 1482px;
+  display: none;
 }
 .treeMaturationWrap {
-	display: inline-block;
-	border: 1px solid black;
-	padding: 2px;
-	height: 10px;
-	width: 150px;
-	margin-bottom: 5px;
+  display: inline-block;
+  border: 1px solid rgb(0, 0, 0);
+  padding: 2px;
+  height: 10px;
+  width: 150px;
+  margin-bottom: 5px;
+  border-radius: 20px;
+}
+.treeMaturationWrapApple {
+  margin-left: 20px;
 }
 .treeHpWrap {
-	display: inline-block;
-	border: 1px solid black;
-	padding: 2px;
-	height: 10px;
-	width: 150px;
+  display: inline-block;
+  border: 1px solid rgb(0, 0, 0);
+  padding: 2px;
+  height: 10px;
+  width: 150px;
+  border-radius: 20px;
+}
+
+.treeHpWrapApple {
+  margin-left: 20px;
 }
 .treeMaturation {
-	background-color: #096409;
-	height: 10px;
-	width: 0px;
+  background-color: rgb(9, 100, 9);
+  height: 10px;
+  width: 0px;
+  border-radius: 20px;
 }
 .treeHp {
-	background-color: red;
-	height: 10px;
-	width: 150px;
+  background-color: rgb(255, 0, 0);
+  height: 10px;
+  width: 150px;
+  border-radius: 20px;
 }
 .plum {
-	display: none;
-	position: absolute;
-	top: 565px;
-    left: 1700px;
+  display: none;
+  position: absolute;
+  top: 565px;
+  left: 1650px;
 }

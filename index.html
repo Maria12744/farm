@@ -1,162 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Farm</title>
-		<link rel="stylesheet" href="css/main.css">
-		<link rel="stylesheet" href="css/start.css">
-		<link rel="stylesheet" href="css/first level.css">
-		<link rel="stylesheet" href="css/second level.css">
-		<script defer src="./js/player.js"></script>
-		<script defer src="./js/plants.js"></script>
-		<script defer src="./js/cow.js"></script>
-		<script defer src="./js/wolf.js"></script>
-		<script defer src="./js/game.js"></script>
-	</head>
-	<body>
-		<section class="start_section">
-			<p class="greeting">Добро пожаловать на ферму!</p>
-			<p class="name">Введите имя:</p>
-			<input class="name_input" type="text" required>
-			<p class="name">Выберите персонажа:</p>
-			<select name="" id="hero">
-				<option value="male">он</option>
-				<option value="female">она</option>
-			</select>
-			<button class="start_btn">Начать</button>
-		</section>
-		<section class="user_name"></section>
-		
-		<div class='guideFirstLevel'>
-			<i style='font-size:21px'>Первый уровень.</i>
-			<br><br>
-			Пока растения и деревья созревают <img src='./pics/guides/maturation.jpg' alt='photo'>
-			влага из почвы испаряется <img src='./pics/guides/hp of plants.jpg' alt='photo'>
-			поэтому необходимо их поливать "кликая" левой кнопкой мыши по конкретному растению или дереву.
-			<br><br>
-			Чем больше растений и деревьев созреют и не погибнут, тем больше баллов Вы получите.
-			<br><br><br>
-			Удачи!
-			<br><br><br>
-			<button class="guideBtn"> За дело! </button>
-			
-		</div>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/start.css">
+    <link rel="stylesheet" href="./css/first level.css">
+    <link rel="stylesheet" href="./css/second level.css">
+    <script defer src="./js/player.js"></script>
+    <script defer src="./js/plants.js"></script>
+    <script defer src="./js/cow.js"></script>
+    <script defer src="./js/wolf.js"></script>
+    <script defer src="./js/game.js"></script>
+  </head>
+  <body>
+    <section class="start_section">
+      <p class="greeting">Добро пожаловать на ферму!</p>
+      <p class="name">Введите имя:</p>
+      <input class="name_input" type="text" required>
+      <p class="name">Выберите персонажа:</p>
+      <select name="" id="hero">
+        <option value="male">он</option>
+        <option value="female">она</option>
+      </select>
+      <button class="start_btn">Начать</button>
+    </section>
+    <section class="user_name"></section>
+  
+    <div class='guideFirstLevel'>
+      <i style='font-size:21px'>Первый уровень.</i>
+      <br><br>
+      Пока растения и деревья созревают <img src='./pics/guides/maturation.jpg' alt='photo'>
+      влага из почвы испаряется <img src='./pics/guides/hp of plants.jpg' alt='photo'>
+      поэтому необходимо их поливать "кликая" левой кнопкой мыши по конкретному растению или дереву.
+      <br><br>
+      Чем больше растений и деревьев созреют и не погибнут, тем больше баллов Вы получите.
+      <br><br><br>
+      Удачи!
+      <br><br><br>
+      <button class="guideBtn"> За дело! </button>
+    
+    </div>
 
-		<div class="player">
-			<img src="./pics/avatar/Hayseed-1.png" alt="male" class="male">
-			<img src="./pics/avatar/Sunflower-1.png" alt="female" class="female">
-		</div>
-		
-		<div class='garden'>	
-			<div class='hpAndPlantWrap'>
-				<div class='maturationWrap'><div class='maturation'></div></div>
-				<div class='hpWrap'><div class='hp'></div></div>
-				<img class='carrot carrot1' src='pics/garden/carrot_3.png' alt='carrot'>
-			</div>
-			<div class='hpAndPlantWrap'>
-				<div class='maturationWrap'><div class='maturation'></div></div>
-				<div class='hpWrap'><div class='hp'></div></div>
-				<img class='carrot carrot2' src='pics/garden/carrot_3.png' alt='carrot'>
-			</div>
-			<div class='hpAndPlantWrap'>
-				<div class='maturationWrap'><div class='maturation'></div></div>
-				<div class='hpWrap'><div class='hp'></div></div>
-				<img class='carrot carrot3' src='pics/garden/carrot_3.png' alt='carrot'>
-			</div>
-			<div class='hpAndPlantWrap'>
-				<div class='maturationWrap'><div class='maturation'></div></div>
-				<div class='hpWrap'><div class='hp'></div></div>
-				<img class='carrot carrot4' src='pics/garden/carrot_3.png' alt='carrot'>
-			</div>
-			<div class='hpAndPlantWrap'>
-				<div class='maturationWrap'><div class='maturation'></div></div>
-				<div class='hpWrap'><div class='hp'></div></div>
-				<img class='carrot carrot5' src='pics/garden/carrot_3.png' alt='carrot'>
-			</div>
-			<div class='hpAndPlantWrap'>
-				<div class='maturationWrap'><div class='maturation'></div></div>
-				<div class='hpWrap'><div class='hp'></div></div>
-				<img class='carrot carrot6' src='pics/garden/carrot_3.png' alt='carrot'>
-			</div>
-			<div class='hpAndPlantWrap'>
-				<div class='maturationWrap'><div class='maturation'></div></div>
-				<div class='hpWrap'><div class='hp'></div></div>
-				<img class='cabbage cabbage1' src='pics/garden/cabbage_3.png' alt='cabbage'>
-			</div>
-			<div class='hpAndPlantWrap'>
-				<div class='maturationWrap'><div class='maturation'></div></div>
-				<div class='hpWrap'><div class='hp'></div></div>
-				<img class='cabbage cabbage2' src='pics/garden/cabbage_3.png' alt='cabbage'>
-			</div>
-			<div class='hpAndPlantWrap'>
-				<div class='maturationWrap'><div class='maturation'></div></div>
-				<div class='hpWrap'><div class='hp'></div></div>
-				<img class='cabbage cabbage3' src='pics/garden/cabbage_3.png' alt='cabbage'>
-			</div>
-			<div class='hpAndPlantWrap'>
-				<div class='maturationWrap'><div class='maturation'></div></div>
-				<div class='hpWrap'><div class='hp'></div></div>
-				<img class='cabbage cabbage4' src='pics/garden/cabbage_3.png' alt='cabbage'>
-			</div>
-			<div class='hpAndPlantWrap'>
-				<div class='maturationWrap'><div class='maturation'></div></div>
-				<div class='hpWrap'><div class='hp'></div></div>
-				<img class='cabbage cabbage5' src='pics/garden/cabbage_3.png' alt='cabbage'>
-			</div>
-			<div class='hpAndPlantWrap'>
-				<div class='maturationWrap'><div class='maturation'></div></div>
-				<div class='hpWrap'><div class='hp'></div></div>
-				<img class='cabbage cabbage6' src='pics/garden/cabbage_3.png' alt='cabbage'>
-			</div>
-			<div class='hpAndPlantWrap'>
-				<div class='maturationWrap'><div class='maturation'></div></div>
-				<div class='hpWrap'><div class='hp'></div></div>
-				<img class='cabbage cabbage7' src='pics/garden/cabbage_3.png' alt='cabbage'>
-			</div>
-		</div>
-		<div class='hpAndTreeAppleWrap'>
-			<div class='treeMaturationWrap'><div class='treeMaturation'></div></div>
-			<div class='treeHpWrap'><div class='treeHp'></div></div>
-			<img class='tree apple' src='pics/trees/apple_tree_3.png' alt='apple_tree'>
-		</div>
-		<div class='hpAndTreePearWrap'>
-			<div class='treeMaturationWrap'><div class='treeMaturation'></div></div>
-			<div class='treeHpWrap'><div class='treeHp'></div></div>
-			<img class='tree pear' src='pics/trees/pear_tree_3.png' alt='pear_tree'>
-		</div>
-		<img class='tree plum' src='pics/trees/plum_tree_3.png' alt='plum_tree'>
+    <div class="player">
+      <img src="./pics/avatar/Hayseed-1.png" alt="male" class="male">
+      <img src="./pics/avatar/Sunflower-1.png" alt="female" class="female">
+    </div>
 
-		<div class='guideSecondLevel'>
-			<i style='font-size:21px'>Второй уровень.</i>
-			<br><br>
-			Кликайте на корову, чтобы она давала молоко
-			<img src='./pics/guides/milk.png' alt='photo'>
-			а также защищайте корову от волка, кликая на хищника.
-			<br><br>
-			Игра закончится, когда Вы соберёте всё молоко. 
-			<br><br>
-			Но будьте внимательны, волк может съесть вашу корову!
-			<br><br><br>
-			Удачи!
-			<br><br><br>
-			<button class="guideBtnSecond"> За дело! </button>
-			
-		</div>
-		<div class='nextLevel'></div>
-		
-		<div class='cowWrap'>
-			<div class='cowHpWrap'><div class='cowHp'></div></div>
-			<div class='cowMilkWrap'><div class='cowMilk'></div></div>
-			<img class='cow' src='pics/animals/cow.png' alt='cow'>
-		</div>
-		<div class='wolfWrap'>
-			<div class='wolfHpWrap'><div class='wolfHp'></div></div>
-			<img class='wolf' src='pics/animals/wolf.png' alt='wolf'>
-		</div>
-		<div class="finish">
-			
-		</div>
+    <div class='garden'>	
+      <div class='hpAndPlantWrap'>
+        <div class='maturationWrap'><div class='maturation'></div></div>
+        <div class='hpWrap'><div class='hp'></div></div>
+        <img class='carrot carrot1' src='./pics/garden/carrot_3.png' alt='carrot'>
+      </div>
+      <div class='hpAndPlantWrap'>
+        <div class='maturationWrap'><div class='maturation'></div></div>
+        <div class='hpWrap'><div class='hp'></div></div>
+        <img class='carrot carrot2' src='./pics/garden/beet_3.png' alt='carrot'>
+      </div>
+      <div class='hpAndPlantWrap'>
+        <div class='maturationWrap'><div class='maturation'></div></div>
+        <div class='hpWrap'><div class='hp'></div></div>
+        <img class='carrot carrot3' src='./pics/garden/cucumber_3.png' alt='carrot'>
+      </div>
+      <div class='hpAndPlantWrap'>
+        <div class='maturationWrap'><div class='maturation'></div></div>
+        <div class='hpWrap'><div class='hp'></div></div>
+        <img class='carrot carrot4' src='./pics/garden/eggplant_3.png' alt='carrot'>
+      </div>
+      <div class='hpAndPlantWrap'>
+        <div class='maturationWrap'><div class='maturation'></div></div>
+        <div class='hpWrap'><div class='hp'></div></div>
+        <img class='carrot carrot5' src='./pics/garden/melon_4.png' alt='carrot'>
+      </div>
+      <div class='hpAndPlantWrap'>
+        <div class='maturationWrap'><div class='maturation'></div></div>
+        <div class='hpWrap'><div class='hp'></div></div>
+        <img class='carrot carrot6' src='./pics/garden/pumpkin_4.png' alt='carrot'>
+      </div>
+      <div class='hpAndPlantWrap'>
+        <div class='maturationWrap'><div class='maturation'></div></div>
+        <div class='hpWrap'><div class='hp'></div></div>
+        <img class='cabbage cabbage1' src='./pics/garden/strawberry_3.png' alt='cabbage'>
+      </div>
+      <div class='hpAndPlantWrap'>
+        <div class='maturationWrap'><div class='maturation'></div></div>
+        <div class='hpWrap'><div class='hp'></div></div>
+        <img class='cabbage cabbage2' src='./pics/garden/sweet_pepper_3.png' alt='cabbage'>
+      </div>
+      <div class='hpAndPlantWrap'>
+        <div class='maturationWrap'><div class='maturation'></div></div>
+        <div class='hpWrap'><div class='hp'></div></div>
+        <img class='cabbage cabbage3' src='./pics/garden/tomatoes_4.png' alt='cabbage'>
+      </div>
+      <div class='hpAndPlantWrap'>
+        <div class='maturationWrap'><div class='maturation'></div></div>
+        <div class='hpWrap'><div class='hp'></div></div>
+        <img class='cabbage cabbage4' src='./pics/garden/zucchini_4.png' alt='cabbage'>
+      </div>
+      <div class='hpAndPlantWrap'>
+        <div class='maturationWrap'><div class='maturation'></div></div>
+        <div class='hpWrap'><div class='hp'></div></div>
+        <img class='cabbage cabbage5' src='./pics/garden/onion_3.png' alt='cabbage'>
+      </div>
+      <div class='hpAndPlantWrap'>
+        <div class='maturationWrap'><div class='maturation'></div></div>
+        <div class='hpWrap'><div class='hp'></div></div>
+        <img class='cabbage cabbage6' src='./pics/garden/corn_3.png' alt='cabbage'>
+      </div>
+      <div class='hpAndPlantWrap'>
+        <div class='maturationWrap'><div class='maturation'></div></div>
+        <div class='hpWrap'><div class='hp'></div></div>
+        <img class='cabbage cabbage7' src='./pics/garden/potato_3.png' alt='cabbage'>
+      </div>
+    </div>
+    <div class='hpAndTreeAppleWrap'>
+      <div class='treeMaturationWrap treeMaturationWrapApple'><div class='treeMaturation'></div></div>
+      <div class='treeHpWrap treeHpWrapApple'><div class='treeHp'></div></div>
+      <img class='tree apple' src='./pics/trees/apple_tree_3.png' alt='apple_tree'>
+    </div>
+    <div class='hpAndTreePearWrap'>
+      <div class='treeMaturationWrap'><div class='treeMaturation'></div></div>
+      <div class='treeHpWrap'><div class='treeHp'></div></div>
+      <img class='tree pear' src='./pics/trees/pear_tree_3.png' alt='pear_tree'>
+    </div>
+    <img class='tree plum' src='./pics/trees/plum_tree_3.png' alt='plum_tree'>
+
+    <div class='guideSecondLevel'>
+      <i style='font-size:21px'>Второй уровень.</i>
+      <br><br>
+      Кликайте на корову, чтобы она давала молоко
+      <img src='./pics/guides/milk.png' alt='photo'>
+      а также защищайте корову от волка, кликая на хищника.
+      <br><br>
+      Игра закончится, когда Вы соберёте всё молоко. 
+      <br><br>
+      Но будьте внимательны, волк может съесть вашу корову!
+      <br><br><br>
+      Удачи!
+      <br><br><br>
+      <button class="guideBtnSecond"> За дело! </button>
+    
+    </div>
+    <div class='nextLevel'></div>
+
+    <div class='cowWrap'>
+    <div class='cowHpWrap'><div class='cowHp'></div></div>
+    <div class='cowMilkWrap'><div class='cowMilk'></div></div>
+    <img class='cow' src='./pics/animals/cow.gif' alt='cow'>
+    </div>
+    <div class='wolfWrap'>
+    <div class='wolfHpWrap'><div class='wolfHp'></div></div>
+    <img class='wolf' src='./pics/animals/wolf.gif' alt='wolf'>
+    </div>
+    <div class="finish">
+    
+    </div>
 	</body>
 </html>

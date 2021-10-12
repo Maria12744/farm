@@ -1,53 +1,57 @@
 html,body {
-	height: 100%;
-	width: 100%;
-	margin: 0;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
 }
 
 body {
-	background-image: url(../pics/background/photo_26.jpg);
-	background-size: 2100px 950px;
-    min-width: 1500px;
-    min-height: 930px;
-    position: relative;
+  background-color: hsl(118, 69%, 37%);
+  background-image: url(../pics/background/photo_26.jpg);
+  background-size: 100vw 100vh;
+  background-position:center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .player{
-    display: flex;
-    align-self: flex-end;
+  display: flex;
+  align-self: flex-end;
 }
 
 .male {
-    display: none;
-    position: absolute;
-    top: 390px;
-    left: 111px;
+  display: none;
+  position: absolute;
+  top: 280px;
+  left: 20px;
 }
 
 .female {
-    display: none;
-	position: absolute;
-    top: 390px;
-    left: 111px;
+  display: none;
+  position: absolute;
+  top: 280px;
+  left: 20px;
 }
 
 .nextLevel {
-	height: auto;
-    width: 394px;
-    border: double 6px #00753b;
-    border-radius: 46px;
-    background-image: linear-gradient(45deg, green, yellow);
-    position: absolute;
-    top: 38vh;
-    left: 38vw;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 21px;
-    font-weight: bold;
-    text-shadow: white 2px 1px 0, white -1px -1px 0, white -1px 1px 0, white 1px -1px 0;
-    padding: 40px 15px;
-    color: darkgreen;
+  height: auto;
+  width: 394px;
+  border: double 6px rgb(0, 117, 59);
+  border-radius: 46px;
+  background-image: linear-gradient(45deg, rgb(0, 128, 0), rgb(255, 255, 0));
+  position: absolute;
+  top: 38vh;
+  left: 38vw;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 21px;
+  font-weight: bold;
+  text-shadow: rgb(255, 255, 255) 2px 1px 0, rgb(255, 255, 255) -1px -1px 0, rgb(255, 255, 255) -1px 1px 0, rgb(255, 255, 255) 1px -1px 0;
+  padding: 40px 15px;
+  color: rgb(0, 100, 0);
 }
